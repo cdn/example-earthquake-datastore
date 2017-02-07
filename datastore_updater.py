@@ -51,6 +51,7 @@ def setup(config):
 
     ckan_url = config.get('main', 'ckan_url').rstrip('/')
     api_key = config.get('main', 'api_key')
+	owner_org = owner_org.get('main','owner_org')
 
     # Create a dataset first
 
@@ -63,6 +64,7 @@ def setup(config):
 
 The script that handles the update can be accessed at https://github.com/ckan/example-earthquake-datastore.
         ''',
+		'owner_org':owner_org
     }
 
     response = requests.post('{0}/api/action/package_create'.format(ckan_url),
