@@ -44,7 +44,7 @@ You probably want to set up this command to run hourly, eg with a cron job:
 
 Add a line like this:
 
-    0 0 * * * /path/to/your/pyenv/bin/python /path/to/your/pyenv/src/example-earthquake-datastore/datastore_updater.py update
+    0 * * * * /path/to/your/pyenv/bin/python /path/to/your/pyenv/src/example-earthquake-datastore/datastore_updater.py update
 
 ## How it works
 
