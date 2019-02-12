@@ -2,7 +2,7 @@ import sys
 import ConfigParser
 import json
 import datetime
-
+from os.path import dirname, realpath
 
 import requests
 
@@ -190,7 +190,8 @@ if __name__ == '__main__':
         exit()
 
     config = ConfigParser.SafeConfigParser()
-    config.read('config.ini')
+    path = (dirname(realpath(__file__)))
+    config.read(path + '/config.ini')
     for key in ('ckan_url', 'api_key',):
         if not config.get('main', key):
             exit('Please fill the {0} option in the config.ini file'
